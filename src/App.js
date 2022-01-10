@@ -49,7 +49,7 @@ function App() {
     >
       <Header />
       <AddTask refresh={fetchTasksHandler}/>
-      {!isLoading && tasksCtx.tasks.length > 0 && <Tasks tasks={tasksCtx.tasks}/>}
+      {!isLoading && tasksCtx.tasks.length > 0 && <Tasks tasks={tasksCtx.tasks} refresh={fetchTasksHandler}/>}
       {!isLoading && tasksCtx.tasks.length === 0 && <EmptyTasks />}
       {isLoading && <Loading />}
       {!isLoading && error && <p>{error}</p>}
