@@ -2,10 +2,9 @@ import React, { useContext, useEffect, useRef } from "react";
 import { TaskContext } from "../context/GlobalState";
 
 const AddTask = (props) => {
-  const tasksCtx = useContext(TaskContext);
-
   const addTaskHandler = async (e) => {
     e.preventDefault();
+    if(textRef.current.value!==''){
     const task = {
       text: textRef.current.value,
       isChecked: false,
@@ -25,6 +24,7 @@ const AddTask = (props) => {
     //console.log(data);
     props.refresh();
     textRef.current.value = "";
+    }
   };
 
   const {refresh} = props;

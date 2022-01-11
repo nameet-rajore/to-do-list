@@ -30,7 +30,7 @@ const EditModal = (props) => {
 
   return (
     <>
-      <Modal show={true} onHide={props.closeHandler}>
+      <Modal show={true} onHide={props.closeModal}>
         <Modal.Header closeButton>
           <Modal.Title>Edit Task</Modal.Title>
         </Modal.Header>
