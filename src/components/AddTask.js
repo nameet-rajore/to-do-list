@@ -27,9 +27,10 @@ const AddTask = (props) => {
     textRef.current.value = "";
   };
 
+  const {refresh} = props;
   useEffect(() => {
-    props.refresh();
-  }, [props.refresh]);
+    refresh();
+  }, [refresh]);
 
   const textRef = useRef();
 
@@ -43,7 +44,7 @@ const AddTask = (props) => {
             ref={textRef}
           />
           <button
-            className=" ms-2 col-2 btn btn-primary"
+            className=" ms-2 col-auto btn btn-primary"
             type="submit"
             onClick={addTaskHandler}
           >
